@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pg-color: #f1f1f1;
+    --pg--secoundary: #fbfbfb;
+    --dark-gray: #333;
+    --ligtBrown: #c7a17a;
+    --black: #1f2226;
+
+}
+/* كلاسات يتم استخدامها اكتر من مره */
+.container{
+max-width: 1200px;
+margin: auto;
+
+
+}
+.text-primary{
+color: var(--ligtBrown);
+
+}
+.heading{
+  text-align: center;
+}
+.heading span {
+font-size: 18px; 
+}
+.heading h2{
+font-size: 40px;
+font-weight: 500;
+text-transform: uppercase;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--pg-color);
+
+}
+h1,h2,h3{
+    font-family: "Oswald", sans-serif;
+     color:var(--dark-gray) ;
+}
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+/* header start */
+ #header{
+position: fixed ;
+background-color: #fff;
+width: 100%;
+border-bottom: 1px solid #ccc;
+
+}
+#header .navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: auto;
+height: 90px;
+
+}
+#header .navbar .logo{
+width: 300px;
+}
+#header .navbar ul {
+display: flex;
+}
+#header .navbar ul li a {
+    color: var(--dark-gray);
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 500px;
+}
+#header .navbar ul li a:hover {
+
+    color: var(--ligtBrown);
+}
+/* heder end */
+/* home start  */
+#home{
+background: url(./imag/home-bg.png) center no-repeat ;
+background-size: 100%;
+background-color: var(--pg-color);
+
+}
+#home .home-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  min-height: 100vh;
+  gap: 5rem;
+  align-items: center;
+}
+#home .home-content .content-text h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#home .home-content .content-text h1 {
+  font-size: 80px;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+#home .home-content .content-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+ #home .home-content .content-text .btn {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: var(--ligtBrown);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+#home .home-content .content-text .btn:hover {
+background-color: var(--dark-gray);
+}
+#home .home-content .content-text .btn i {
+margin: 5px;
+}
+#home .home-content img {
+display: block;
+width: 100%;
+
+}
+/* home end */
+/* about start */
+#about , #menu{
+  background-color: var(--pg--secoundary);
+padding:6rem 0;
+}
+ #about .row{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap:2rem ;
+align-items: center;
+ }
+#about .row .about-content h2{
+  text-transform: uppercases;
+  font-size: 28px;
+   margin-bottom: 10px;
+}
+#about .row .about-content .item {
+margin: 2rem 0;
+
+}
+#about .row .about-content .item h3{
+  margin-bottom: 5px;
+}
+ /* about end */
+ /* menu start */
+#menu{
+background-color: var(--pg--secoundary);
+
+
+} 
+ 
+#menu .row{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* عمودان */
+  gap: 2rem;                              /* المسافة بين الكروت */
+  margin-top: 2rem;
+}
+
+/* الكارت */
+#menu .row .col .item{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* لا تستخدم space-between */
+  gap: 1.25rem;                /* بين الصورة والنص */
+  padding: 22px 20px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: 10px;
+}
+
+/* الصورة */
+#menu .row .col img{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,.08));
+}
+
+/* العنوان والوصف */
+#menu .row .col .item h3{
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  color: var(--title);
+  line-height: 1.2;
+}
+
+#menu .row .col .item p{
+  margin: 0;
+  color: var(--text);
+  font-size: .95rem;
+}
+
+/* السعر مثبت يمين */
+#menu .row .col .item .price{
+  margin-left: auto;     /* يدفعه لأقصى اليمين */
+  font-weight: 700;
+  color: var(--price);
+  white-space: nowrap;
+}
+
+/* خطوط فاصلة خفيفة بين العناصر داخل العمود (اختياري) */
+#menu .row .col .item + .item{
+  border-top: 1px solid #f1efec;
+}
+
+/* تفاعل بسيط */
+#menu .row .col .item:hover{
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  transform: translateY(-1px);
+  transition: .2s ease;
+}
+
+/* استجابة للموبايل: عمود واحد */
+@media (max-width: 820px){
+  #menu .row{
+    grid-template-columns: 1fr;
+  }
+}
+#menu .row .col .item .price p{
+font-size: 20px;
+font-weight: 600;
+}
+#menu .row .col .item .details {
+  margin-left: 20px;
+}
+
+#menu .row .col .item .details h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#menu .row .col .item .details p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#menu .row .col .item .details .price {
+  border-left: 1px solid #eee;
+  padding: 20px;
+}
+/* ألغِ الحدود حول الكرت إن وجدت */
+#menu .row .col .item{
+  border: none;          /* لو كنت عامل border للكرت */
+  padding: 22px 20px;    /* مسافة داخلية مناسبة */
+}
+
+/* خط فاصل بين العناصر داخل نفس العمود */
+#menu .row .col .item + .item{
+  border-top: 1px solid #eee;   /* لون الفاصل */
+}
+
+/* (اختياري) خفّف المسافة العمودية وحافظ على تناسق الخط */
+#menu .row .col .item{
+  margin: 0;                    /* لأننا نستخدم border-top للفاصل */
+}
+
+/* متغيرات ألوان اختيارية */
+:root{
+  --card-bg: #f6f6f6;
+  --card-line: #e9e9e9;
+  --text: #222;
+  --muted: #666;
+}
+
+/* وعاء عام للقسم */
+#testimonials{
+  padding: 60px 0;
+  background: #fff;
+  color: var(--text);
+}
+
+/* عنوان القسم */
+#testimonials .section-head{
+  text-align: center;
+  margin-bottom: 28px;
+}
+#testimonials .section-head h2{
+  font-family: "Oswald", system-ui, sans-serif;  /* لو كنت مستخدمه */
+  letter-spacing: 1px;
+  font-size: clamp(24px, 5vw, 36px);
+  margin: 0;
+}
+
+/* الشبكة */
+#testimonials .testimonials-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* البطاقة */
+#testimonials .testimonial{
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  padding: 44px 18px 22px;           /* مساحة عشان الصورة تعلو */
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* الصورة الدائرية */
+#testimonials .avatar{
+  position: absolute;
+  top: -34px;                        /* تطلع فوق البطاقة */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px; height: 68px;
+  margin: 0;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+#testimonials .avatar img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* الاسم */
+#testimonials .name{
+  margin: 18px 0 8px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* الاقتباس */
+#testimonials .quote{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+  quotes: "“" "”" "‘" "’";
+}
+#testimonials .quote::before{ content: open-quote; }
+#testimonials .quote::after{ content: close-quote; }
+
+/* استجابة للموبايل */
+@media (max-width: 900px){
+  #testimonials .testimonials-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px){
+  #testimonials .testimonials-grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* متغيرات ألوان اختيارية */
+:root{
+  --card-bg: #f6f6f6;
+  --card-line: #e9e9e9;
+  --text: #222;
+  --muted: #666;
+}
+
+/* وعاء عام للقسم */
+#testimonials{
+  padding: 60px 0;
+  background: #fff;
+  color: var(--text);
+}
+
+/* عنوان القسم */
+#testimonials .section-head{
+  text-align: center;
+  margin-bottom: 28px;
+}
+#testimonials .section-head h2{
+  font-family: "Oswald", system-ui, sans-serif;  /* لو كنت مستخدمه */
+  letter-spacing: 1px;
+  font-size: clamp(24px, 5vw, 36px);
+  margin: 0;
+}
+
+/* الشبكة */
+#testimonials .testimonials-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* البطاقة */
+#testimonials .testimonial{
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  padding: 44px 18px 22px;           /* مساحة عشان الصورة تعلو */
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* الصورة الدائرية */
+#testimonials .avatar{
+  position: absolute;
+  top: -34px;                        /* تطلع فوق البطاقة */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px; height: 68px;
+  margin: 0;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+#testimonials .avatar img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* الاسم */
+#testimonials .name{
+  margin: 18px 0 8px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* الاقتباس */
+#testimonials .quote{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+  quotes: "“" "”" "‘" "’";
+}
+#testimonials .quote::before{ content: open-quote; }
+#testimonials .quote::after{ content: close-quote; }
+
+/* استجابة للموبايل */
+@media (max-width: 900px){
+  #testimonials .testimonials-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px){
+  #testimonials .testimonials-grid{
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== Footer ===== */
+#footer {
+  background: #111;              /* الخلفية الداكنة */
+  color: #eee;                   /* لون النص */
+  padding: 50px 0 20px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+#footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#footer h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#footer p {
+  margin-bottom: 16px;
+}
+
+/* روابط */
+#footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#footer a:hover {
+  color: #fff;
+}
+
+/* About Info - القائمة */
+#footer .contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#footer .contact li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#footer .contact i {
+  color: #c7a27b;   /* لون الأيقونات (ذهبي/بني فاتح) */
+}
+
+/* Quick Links */
+#footer .links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#footer .links li {
+  margin-bottom: 10px;
+}
+
+/* Social */
+#footer .social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#footer .social li {
+  margin-bottom: 10px;
+}
+#footer .social i {
+  margin-right: 8px;
+  color: #c7a27b;
+}
+
+/* الشريط السفلي */
+#footer .footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 18px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+#footer .footer-bottom a {
+  color: #c7a27b;
+  text-decoration: none;
+}
+#footer .footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  #footer .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  #footer .contact li {
+    justify-content: center;
+  }
+}
+/* ===== Variables & Base ===== */
+:root{
+  --brand: #c7a27b;        /* اختياري للهايلايت */
+  --text: #222;
+  --muted: #666;
+  --bg: #f3f3f3;           /* خلفية القسم */
+  --card: #fff;            /* بطاقة الفورم */
+  --line: #e9e9e9;         /* حدود خفيفة */
+  --radius: 14px;
+}
+*{ box-sizing: border-box; }
+.container{ max-width:1200px; margin-inline:auto; padding-inline:16px; }
+
+/* ===== Reservation Section ===== */
+#reservation{
+  background: var(--bg);
+  padding: 60px 0;
+  color: var(--text);
+}
+#reservation .section-head{
+  text-align:center; margin-bottom:28px;
+}
+#reservation .section-head .eyebrow{
+  margin:0 0 6px; color:var(--muted); font-size:14px; letter-spacing:.5px;
+}
+#reservation .section-head h2{
+  margin:0; font-family:"Oswald", system-ui, sans-serif;
+  font-size:clamp(28px,6vw,44px); letter-spacing:1px;
+}
+
+/* عمودان: خريطة + فورم */
+#reservation .reservation-grid{
+  display:grid; grid-template-columns: 1.1fr 0.9fr;
+  gap:28px; align-items:start;
+}
+
+/* ===== Map ===== */
+#reservation .map-wrap{
+  border-radius: var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+#reservation .map-wrap iframe{
+  display:block; width:100%; min-height:460px; border:0;
+}
+
+/* ===== Form Card ===== */
+#reservation .form-wrap{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  padding: 22px 20px 0;              /* صفر تحت لأن الزر كامل العرض أسفل */
+}
+#reservation .form-wrap h3{
+  margin: 6px 0 16px;
+  font-family:"Oswald", system-ui, sans-serif; letter-spacing:.5px;
+}
+
+/* الحقول */
+.booking-form{
+  display:grid; grid-template-columns:1fr; gap:14px;
+}
+.booking-form .field{ display:grid; gap:6px; }
+
+/* نخلي الـlabel موجود لأجل الوصولية لكن مخفي بصرياً */
+.booking-form label{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip: rect(0 0 0 0); white-space:nowrap; clip-path: inset(50%);
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+  width:100%; background:#fff; color:var(--text);
+  border:1px solid var(--line); border-radius:8px;
+  padding:12px 14px; font: inherit; outline:none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.booking-form textarea{ resize: vertical; min-height:110px; }
+.booking-form input::placeholder,
+.booking-form textarea::placeholder{ color:#8b8b8b; }
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+  border-color:#bbb;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.05);
+}
+
+/* زر أسود عريض بأسفل البطاقة */
+.booking-form .actions{
+  margin-top: 18px;
+  background: #111;               /* الشريط الأسود */
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  overflow:hidden;                 /* ليتبع تقويسة البطاقة */
+}
+.booking-form .btn{
+  display:block; width:100%; height:64px;
+  background:#111; color:#fff; border:0;
+  font-weight:700; letter-spacing:.6px;
+  cursor:pointer; text-transform: uppercase;
+  transition: filter .2s ease, transform .15s ease;
+}
+.booking-form .btn:hover{ filter: brightness(0.95); }
+.booking-form .btn:active{ transform: translateY(1px); }
+
+/* ===== Responsive ===== */
+@media (max-width: 960px){
+  #reservation .reservation-grid{ grid-template-columns:1fr; }
+  #reservation .map-wrap iframe{ min-height:360px; }
+}
+
+
+
